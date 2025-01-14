@@ -1,2 +1,2 @@
-export { MyComponent } from './proxies.js'
+export { MyComponent } from './components.js'
 

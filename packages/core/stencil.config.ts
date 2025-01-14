@@ -29,7 +29,8 @@ export const config: Config = {
     }),
     vueOutputTarget({
       componentCorePackage: '@placid/core',
-      proxiesFile: '../vue/src/proxies.ts',
+      hydrateModule: '@placid/core/hydrate',
+      proxiesFile: '../vue/src/components.ts',
     }),
     {
       type: 'docs-readme',
