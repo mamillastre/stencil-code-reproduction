@@ -12,6 +12,7 @@
     "build:frameworks:vue": "pnpm --filter @placid/vue run build",
     "build:frameworks:react": "pnpm --filter @placid/react run build",
     "build:frameworks:angular": "pnpm --filter angular-workspace run build",
+    "start:core": "pnpm --filter @placid/core run start",
     "start:react": "pnpm --filter @apps/react run start",
     "start:vue": "pnpm --filter @apps/vue run start",
     "start:next": "pnpm --filter @apps/next run start",

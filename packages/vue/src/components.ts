@@ -22,3 +22,14 @@ export const MyComponent = /*@__PURE__*/ globalThis.window ? defineContainer<JSX
   }
 });
 
+
+export const MyCounter = /*@__PURE__*/ globalThis.window ? defineContainer<JSX.MyCounter>('my-counter', undefined, [
+  'startCount'
+]) : defineStencilSSRComponent({
+  tagName: 'my-counter',
+  hydrateModule: import('@placid/core/hydrate'),
+  props: {
+    'startCount': [Number, "start-count"]
+  }
+});
+

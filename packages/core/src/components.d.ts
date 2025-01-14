@@ -20,6 +20,12 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface MyCounter {
+        /**
+          * What the counter should start at
+         */
+        "startCount": number;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +34,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLMyCounterElement extends Components.MyCounter, HTMLStencilElement {
+    }
+    var HTMLMyCounterElement: {
+        prototype: HTMLMyCounterElement;
+        new (): HTMLMyCounterElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "my-counter": HTMLMyCounterElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +60,15 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface MyCounter {
+        /**
+          * What the counter should start at
+         */
+        "startCount"?: number;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "my-counter": MyCounter;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +76,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-counter": LocalJSX.MyCounter & JSXBase.HTMLAttributes<HTMLMyCounterElement>;
         }
     }
 }

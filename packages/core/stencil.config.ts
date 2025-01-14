@@ -38,6 +38,9 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+      copy: [
+        { src: './public' },
+      ],
     },
     {
       type: 'dist-hydrate-script',
