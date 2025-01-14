@@ -14,13 +14,6 @@
 | `middle` | `middle`  | The middle name | `string` | `undefined` |
 
 
-## Events
-
-| Event     | Description                             | Type                         |
-| --------- | --------------------------------------- | ---------------------------- |
-| `myInput` | Emitted when a keyboard input occurred. | `CustomEvent<KeyboardEvent>` |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

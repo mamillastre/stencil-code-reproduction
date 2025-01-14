@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h, Event, EventEmitter } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
@@ -22,17 +22,6 @@ export class MyComponent {
    */
   @Prop() last: string;
 
-  /**
-   * Emitted when a keyboard input occurred.
-   */
-  @Event() myInput!: EventEmitter<KeyboardEvent>;
-
-  private onChange(e: KeyboardEvent) {
-    console.log(1, this, this.myInput);
-
-    this.myInput.emit(e);
-  }
-
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }
@@ -40,10 +29,8 @@ export class MyComponent {
   render() {
     return <Host>
       <span class="salutation">Hello, World! I'm</span>
-      <span class="name-container">
-        <input class="name" onChange={this.onChange.bind(this)}>{this.getText()}</input>
-      </span>
-      <span class="footer"></span>
+      <span class="name-container">{this.getText()}</span>
+      <span class="footer">visit me on stenciljs.com</span>
     </Host>;
   }
 }
