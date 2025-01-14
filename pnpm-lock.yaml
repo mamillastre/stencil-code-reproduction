@@ -254,6 +254,9 @@ importers:
 
   apps/vue:
     dependencies:
+      '@placid/core':
+        specifier: workspace:*
+        version: link:../../packages/core
       '@placid/vue':
         specifier: workspace:*
         version: link:../../packages/vue
@@ -426,18 +429,18 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.7.3
+        version: 5.7.3
 
   packages/vue:
     dependencies:
       '@placid/core':
         specifier: workspace:*
         version: link:../core
-    devDependencies:
       '@stencil/vue-output-target':
         specifier: ^0.9.2
         version: 0.9.2(@stencil/core@4.23.2)(vue@3.4.38(typescript@5.7.3))
+    devDependencies:
       typescript:
         specifier: ^5.7.3
         version: 5.7.3

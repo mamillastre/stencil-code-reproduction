@@ -28,6 +28,7 @@ export const config: Config = {
       hydrateModule: '@placid/core/hydrate',
     }),
     vueOutputTarget({
+      includeImportCustomElements: true,
       componentCorePackage: '@placid/core',
       hydrateModule: '@placid/core/hydrate',
       proxiesFile: '../vue/src/components.ts',

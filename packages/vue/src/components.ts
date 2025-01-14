@@ -5,10 +5,11 @@ import { defineContainer, defineStencilSSRComponent } from '@stencil/vue-output-
 
 import type { JSX } from '@placid/core';
 
+import { defineCustomElement as defineMyComponent } from '@placid/core/components/my-component.js';
+import { defineCustomElement as defineMyCounter } from '@placid/core/components/my-counter.js';
 
 
-
-export const MyComponent = /*@__PURE__*/ globalThis.window ? defineContainer<JSX.MyComponent>('my-component', undefined, [
+export const MyComponent = /*@__PURE__*/ globalThis.window ? defineContainer<JSX.MyComponent>('my-component', defineMyComponent, [
   'first',
   'middle',
   'last'
@@ -23,7 +24,7 @@ export const MyComponent = /*@__PURE__*/ globalThis.window ? defineContainer<JSX
 });
 
 
-export const MyCounter = /*@__PURE__*/ globalThis.window ? defineContainer<JSX.MyCounter>('my-counter', undefined, [
+export const MyCounter = /*@__PURE__*/ globalThis.window ? defineContainer<JSX.MyCounter>('my-counter', defineMyCounter, [
   'startCount'
 ]) : defineStencilSSRComponent({
   tagName: 'my-counter',

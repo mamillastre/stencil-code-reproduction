@@ -1,2 +1,1 @@
-export { MyComponent } from './components.js'
-
+export { MyComponent, MyCounter } from './components.js'

@@ -23,6 +23,10 @@
       "import": "./components/my-component.js",
       "types": "./components/my-component.d.ts"
     },
+    "./components/my-counter.js": {
+      "import": "./components/my-counter.js",
+      "types": "./components/my-counter.d.ts"
+    },
     "./loader": {
       "import": "./loader/index.js",
       "require": "./loader/index.cjs",
