@@ -38,7 +38,7 @@ export default function Home() {
           height={37}
           priority
         />
-        <MyComponent first="Stencil" last="'Don't call me a framework' JS">
+        <MyComponent first="Stencil" last="'Don't call me a framework' JS" className="m-4">
         </MyComponent>
       </div>
 

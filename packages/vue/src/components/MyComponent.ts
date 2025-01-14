@@ -1,9 +1,9 @@
+// @ts-nocheck
 import { defineComponent, useSlots, compile, createSSRApp } from 'vue'
 import { renderToString as vueRenderToString } from 'vue/server-renderer'
 import { defineCustomElementMyComponent } from '@placid/core/components'
-import type { JSX } from '@placid/core'
 
-import { defineContainer } from '../vue-component-lib/utils'
+import { defineContainer } from '../vue-component-lib/utils.js'
 
 defineCustomElementMyComponent()
 
@@ -11,7 +11,7 @@ const options = {
   tagName: 'my-component',
 }
 
-const MyComponent = /*@__PURE__*/ defineContainer<JSX.MyComponent>('my-component', undefined, [
+const MyComponent = /*@__PURE__*/ defineContainer<any>('my-component', undefined, [
   'first',
   'middle',
   'last'

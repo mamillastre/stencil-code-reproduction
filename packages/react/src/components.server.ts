@@ -8,22 +8,29 @@
 
 /* eslint-disable */
 
+import { type MyComponentCustomEvent } from "@placid/core";
 import { MyComponent as MyComponentElement, defineCustomElement as defineMyComponent } from "@placid/core/components/my-component.js";
-import type { StencilReactComponent } from '@stencil/react-output-target/runtime';
+import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent, createSSRComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';
 
-type MyComponentEvents = NonNullable<unknown>;
+type MyComponentEvents = { onMyInput: EventName<MyComponentCustomEvent<KeyboardEvent>> };
 
 export const MyComponent: StencilReactComponent<MyComponentElement, MyComponentEvents> = typeof window !== 'undefined'
     ? /*@__PURE__*/ createComponent<MyComponentElement, MyComponentEvents>({
         tagName: 'my-component',
         elementClass: MyComponentElement,
+        // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
         react: React,
-        events: {} as MyComponentEvents,
+        events: { onMyInput: 'myInput' } as MyComponentEvents,
         defineCustomElement: defineMyComponent
     })
     : /*@__PURE__*/ createSSRComponent<MyComponentElement, MyComponentEvents>({
         tagName: 'my-component',
+        properties: {
+            first: 'first',
+            middle: 'middle',
+            last: 'last'
+        },
         hydrateModule: import('@placid/core/hydrate')
     });

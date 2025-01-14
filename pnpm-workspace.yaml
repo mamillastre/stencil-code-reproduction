@@ -3,6 +3,6 @@ packages:
   - 'apps/**'
   # stencil packages will live in the packages directory
   - 'packages/*'
-  - 'packages/angular-workspace/dist/**'
+  - 'packages/angular-workspace/projects/**'
   # exclude packages that are inside test directories
   - '!**/test/**'

@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@placid/react": "workspace:*",
-    "@stencil/react-output-target": "0.0.1-dev.11724191071.12bc82c8",
+    "@stencil/react-output-target": "0.7.1",
     "react": "^18",
     "react-dom": "^18",
     "next": "14.2.5"

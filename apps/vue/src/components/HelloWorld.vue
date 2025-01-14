@@ -4,6 +4,11 @@ import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
 
+const handleInput = (ev: KeyboardEvent) => {
+  console.log('handleInput', ev.target);
+  // inputEvent.value = ev.target.value;
+}
+
 const count = ref(0)
 </script>
 
@@ -18,7 +23,7 @@ const count = ref(0)
     </p>
   </div>
 
-  <MyComponent first="Stencil" last="'Don't call me a framework' JS" />
+  <MyComponent @myInput="handleInput" first="Stencil" last="'Don't call me a framework' JS" />
 
   <p>
     Check out

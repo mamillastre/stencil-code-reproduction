@@ -9,6 +9,9 @@
     "build": "run-s build:*",
     "build:core": "pnpm --filter @placid/core run build",
     "build:frameworks": "pnpm --filter @placid/vue --filter @placid/react --filter angular-workspace run build",
+    "build:frameworks:vue": "pnpm --filter @placid/vue run build",
+    "build:frameworks:react": "pnpm --filter @placid/react run build",
+    "build:frameworks:angular": "pnpm --filter angular-workspace run build",
     "start:react": "pnpm --filter @apps/react run start",
     "start:vue": "pnpm --filter @apps/vue run start",
     "start:next": "pnpm --filter @apps/next run start",
@@ -26,5 +29,6 @@
   ],
   "devDependencies": {
     "npm-run-all2": "^6.2.2"
-  }
+  },
+  "packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
 }
