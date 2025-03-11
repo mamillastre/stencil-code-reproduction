@@ -8,7 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@placid/react": "workspace:*",
+    "@placid/react": "*",
     "@stencil/react-output-target": "0.7.1",
     "react": "^18",
     "react-dom": "^18",

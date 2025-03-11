@@ -5,19 +5,25 @@
   "version": "0.0.1",
   "license": "MIT",
   "type": "module",
+  "workspaces": [
+    "apps/**",
+    "packages/*",
+    "packages/angular-workspace/**",
+    "!**/test/**"
+  ],
   "scripts": {
-    "build": "run-s build:*",
-    "build:core": "pnpm --filter @placid/core run build",
-    "build:frameworks": "pnpm --filter @placid/vue --filter @placid/react --filter angular-workspace run build",
-    "build:frameworks:vue": "pnpm --filter @placid/vue run build",
-    "build:frameworks:react": "pnpm --filter @placid/react run build",
-    "build:frameworks:angular": "pnpm --filter angular-workspace run build",
-    "start:core": "pnpm --filter @placid/core run start",
-    "start:react": "pnpm --filter @apps/react run start",
-    "start:vue": "pnpm --filter @apps/vue run start",
-    "start:next": "pnpm --filter @apps/next run start",
-    "start:nuxt": "pnpm --filter @apps/nuxt run start",
-    "start:angular": "pnpm --filter @apps/angular run start"
+    "build:core": "npm run build -w @placid/core",
+    "build:vue": "npm run build -w @placid/vue",
+    "build:react": "npm run build -w @placid/react",
+    "build:angular": "npm run build -w @placid/angular",
+    "start:core": "npm run start -w @apps/core",
+    "start:react": "npm run start -w @apps/react",
+    "start:vue": "npm run start -w @apps/vue",
+    "start:next": "npm run start -w @apps/next",
+    "start:nuxt": "npm run start -w @apps/nuxt",
+    "start:angular": "npm run start -w @apps/angular",
+    "nuxt": "npm run build:core && npm run build:vue && npm run start:nuxt",
+    "next": "npm run build:core && npm run build:react && npm run start:next"
   },
   "repository": {
     "type": "git",
@@ -27,9 +33,5 @@
     "stencil",
     "component library",
     "ionic"
-  ],
-  "devDependencies": {
-    "npm-run-all2": "^6.2.2"
-  },
-  "packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
+  ]
 }

@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@placid/core": "workspace:*",
-    "@placid/vue": "workspace:*",
+    "@placid/core": "*",
+    "@placid/vue": "*",
     "vue": "^3.4.37"
   },
   "devDependencies": {

@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@placid/vue": "workspace:*",
+    "@placid/vue": "*",
     "nuxt": "^3.12.4",
     "vue": "latest"
   }

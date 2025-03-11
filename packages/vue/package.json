@@ -24,7 +24,7 @@
     "vue": "^3.4.38"
   },
   "dependencies": {
-    "@placid/core": "workspace:*",
+    "@placid/core": "*",
     "@stencil/vue-output-target": "^0.9.2"
   }
 }
