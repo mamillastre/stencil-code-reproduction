@@ -15,7 +15,11 @@ defineProps<{ startCount: number }>()
       </svg>
     </a>
   </header>
-  <MyComponent first="Stencil" last="'Don't call me a framework' JS"></MyComponent>
+  <MyComponent first="Stencil" last="'Don't call me a framework' JS">
+    <span slot="footer">Footer</span>
+    Content
+    <span slot="header">Header</span>
+  </MyComponent>
   <div>
     <MyCounter :startCount={startCount}></MyCounter>
   </div>

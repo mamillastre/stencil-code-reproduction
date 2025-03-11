@@ -1,5 +1,5 @@
 import { Component, Host, Prop, h } from '@stencil/core';
-import { format } from '../../utils/utils';
+// import { format } from '../../utils/utils';
 
 @Component({
   tag: 'my-component',
@@ -22,15 +22,26 @@ export class MyComponent {
    */
   @Prop() last: string;
 
-  private getText(): string {
-    return format(this.first, this.middle, this.last);
-  }
+  // private getText(): string {
+  //   return format(this.first, this.middle, this.last);
+  // }
 
   render() {
-    return <Host>
-      <span class="salutation">Hello, World! I'm</span>
-      <span class="name-container">{this.getText()}</span>
-      <span class="footer">visit me on stenciljs.com</span>
-    </Host>;
+    return (
+      <Host>
+        <span class="salutation">
+          <slot name="header"></slot>
+        </span>
+        <span class="name-container">
+          {/* {this.getText()} */}
+          <div>
+            <slot></slot>
+          </div>
+        </span>
+        <span class="footer">
+          <slot name="footer"></slot>
+        </span>
+      </Host>
+    );
   }
 }

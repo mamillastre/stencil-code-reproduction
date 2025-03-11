@@ -14,7 +14,11 @@ export default function Home() {
             </svg>
           </a>
         </header>
-        <MyComponent first="Stencil" last="'Don't call me a framework' JS"></MyComponent>
+        <MyComponent first="Stencil" last="'Don't call me a framework' JS">
+          <span slot="footer">Footer</span>
+          Content
+          <span slot="header">Header</span>
+        </MyComponent>
         <div>
           <MyCounter startCount={42}></MyCounter>
         </div>
